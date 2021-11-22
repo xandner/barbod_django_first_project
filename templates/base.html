@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+</head>
+
+<body>
+    <ul> <a href="{% url 'home' %}"> Home </a></ul>
+    {% block title %} {% endblock title %}
+    <p>
+        {% block content %}
+            
+        {% endblock content %}
+    </p>
+</body>
+
+</html>
