@@ -2,4 +2,17 @@
 
 {% block title %}home{% endblock title %}
 
-{% block content %}{{ data }}{% endblock content %}
+{% block content %}
+    {% for post in posts %}
+    <div class="card">
+  <div class="card-header">
+    {{post.pk}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <a href="{{ post.get_absolute_url}}" class="btn btn-primary">show</a>
+    [ <a href="{% url 'blog:edit' pk=post.pk %}"> edit </a> ]
+  </div>
+</div> <br>
+    {% endfor %}
+{% endblock content %}

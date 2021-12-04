@@ -19,5 +19,8 @@ from . import views
 app_name='blog'
 
 urlpatterns = [
+    path('create/', views.create, name='create'),
+    path('edit/<int:pk>/', views.edit,name='edit'),
     path("about/",views.about,name="abut"),
+    path('<slug:slug>/',views.details,name="detail"),
 ]

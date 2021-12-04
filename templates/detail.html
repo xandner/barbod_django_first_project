@@ -1,0 +1,11 @@
+{% extends "base.html"%}
+{% block title %} <div class="">  </div> {% endblock title %}
+{% block content %}
+
+{{post.body}}
+
+<br>
+<p>created at: {{ post.date|date:"j / m / y" }} {{post.date|time:"h:i a"}} </p>
+<p>updated at: {{ post.updated|date:"j / m / y" }} {{post.updated|time:"h:i a"}}</p>
+<p>{%if post.auther %}author: {{ post.auther }} {% else %} ------ {%endif%}</p>
+{% endblock content %}
